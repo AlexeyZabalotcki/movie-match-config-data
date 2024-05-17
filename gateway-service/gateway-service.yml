@@ -35,13 +35,13 @@ spring:
           predicates:
             - Path=/invitations/**
           filters:
-            - RewritePath=/invitations(?<remaining>.*), /api/v1/invitations{remaining}
+            - RewritePath=/invitations(?<remaining>.*), /api/v1/invitations${remaining}
         - id: groups
           uri: ${service-lb-urls.users}
           predicates:
             - Path=/groups/**
           filters:
-            - RewritePath=/groups(?<remaining>.*), /api/v1/groups{remaining}
+            - RewritePath=/groups(?<remaining>.*), /api/v1/groups${remaining}
 
 service-lb-urls:
   users: lb://user-profile-service
