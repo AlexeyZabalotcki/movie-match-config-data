@@ -1,11 +1,41 @@
 server:
   port: 8000
+app:
+  config:
+    keycloak:
+      url: http://localhost:8080/
+      realm: movie-matcher
+#security:
+#  oauth2:
+#    resourceserver:
+#      jwt:
+#        issuer-uri: http://localhost:9090/realms/movie-matcher
 
 security:
   oauth2:
+    client:
+      provider:
+        keycloak:
+          token-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/token
+          authorization-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/auth
+          user-name-attribute: preferred_username
+          user-info-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/userinfo
+          jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
+          user-info-authentication-method: header
+      registration:
+        movie-matcher:
+          provider: keycloak
+          client-id: movie-matcher
+          client-secret: dlLOHQRLCCk7mxpYKlwUVWhUQlGEoUz0
+          authorization-grant-type: authorization_code
+          redirect-uri: http://localhost:8080/login/oauth2/code/keycloak
+          scope: openid
     resourceserver:
       jwt:
-        issuer-uri: http://localhost:9090/realms/movie-matcher
+        jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
+
+
+
 #  jwt:
 #    secret: "{cipher}AQAbokA/9oTfV4LqEeWFxV8PH4cgcLijm8GmWaobBSKyQaJH4doq+cffAaHZme7860wfYE36qUFcc4EuMHc0p1BBQGlDNOidHXcs6pKC+shs4MEZLcNS6CgBAMqAa+1e9wY8/cas4CyWTIVrPeP1lxKwMWCbTDb77Tv3ICE5Ttosaj3P7Nvs/ir6b4J/NZA7uu47lcCzwDR1boj8MCukkeCnX4jjX5N7NfSyu5boFvpbLIaOVD2d5XZo+WLxop7Llz4kSMivzeCv0ivOfP12aYmBEWzbkukf/Qg3gMA+rTnvp++DnJ7SWcOWpiwTRwacUHZ3dlKQVQqeCKvh+TPWuHpAahHhZ+PLedRLfedd2mV75Amg24+q7UoL/GPqWXxqM6UjMKT3TPm/57ygtjKZVH2EcDTOHjghT0w+nNbdOhDhK8c8PTQ/f2rgWmxHHCSK3Mna9MsbEYLJaRk0BJViOFVPxrKMoFpxmgonxq5usSBGKU2i8SUuA+nVJt6IaPiNClbL0/8qOX4LJk+CLyBYtE8A5kdff8TzcBmbxYBS+NkCDMEF9tvBAVbFeqoAKeEzeumkMJhBtCi4P2DCsnUDOz8DE/vXBa6x9l6Y/eBiCHz8x3gFEWXJjQoecjxxv0bYidwBaw/mdqS85odl50ynATskJfYep15U5umwW6ARjMGTerxLyLb63c6qMlePShqXGBkD6o5dYPxaRSgQ34zWDqGP"
 #    secret: ${JWT_SECRET:2AW9UBKG7ZGLLJ5W25V097ZUCEZJDT7O7KOV284EUMWQD7G9UK8Q9RFNY15D9RIUKAXQS9JVOJ1Z81KTJAG76BVY8AICAS88ZAAUJGW6FXJID00OZBQTYKGKHXMFOPT07SVNN669GFXG801TNZQW1YO467LY4VWYP0I18661GA1V94ZHZKWJ3938DRFYN8HA7ZZ5KV10XABAXNA7L1SCWG6YX7NG60QROUHQL4MH4QAVX4UL4XGGVVHNPT6AODP7}

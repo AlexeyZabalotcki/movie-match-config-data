@@ -52,7 +52,7 @@ eureka:
 app:
   config:
     keycloak:
-      server-url: http://localhost:8571
+      server-url: http://localhost:8080
       realm: movie-matcher
       client-id: movie-matcher
       client-secret: dlLOHQRLCCk7mxpYKlwUVWhUQlGEoUz0
