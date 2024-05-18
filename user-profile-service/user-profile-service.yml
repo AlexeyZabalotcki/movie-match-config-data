@@ -48,3 +48,11 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_URL}
+
+app:
+  config:
+    keycloak:
+      server-url: http://localhost:8571
+      realm: movie-matcher
+      client-id: movie-matcher
+      client-secret: dlLOHQRLCCk7mxpYKlwUVWhUQlGEoUz0
