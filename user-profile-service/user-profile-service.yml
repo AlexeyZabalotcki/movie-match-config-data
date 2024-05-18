@@ -52,7 +52,7 @@ eureka:
 app:
   config:
     keycloak:
-      server-url: http://localhost:8080/realms/master/protocol/openid-connect/auth
+      server-url: http://localhost:8080/auth
       realm: movie-matcher
       client-id: movie-matcher
       username: admin
