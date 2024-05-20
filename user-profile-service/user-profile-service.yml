@@ -55,6 +55,6 @@ app:
       realm: movie-matcher
       adminClientId: admin-cli
       adminClientSecret: VO6iQ1sznn5zrgFkcTBbKMMC4ob7vXff
-      server-url: http://localhost:8080
+      server-url: http://keycloak:8080
       client: movie-matcher-auth
       client-secret: dlLOHQRLCCk7mxpYKlwUVWhUQlGEoUz0
