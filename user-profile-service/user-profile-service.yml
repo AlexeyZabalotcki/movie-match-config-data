@@ -52,9 +52,9 @@ eureka:
 app:
   config:
     keycloak:
-      server-url: http://localhost:8080
       realm: movie-matcher
-      client-id: movie-matcher
-      username: admin
-      password: admin
+      adminClientId: admin-cli
+      adminClientSecret: VO6iQ1sznn5zrgFkcTBbKMMC4ob7vXff
+      server-url: http://localhost:8080
+      client: movie-matcher-auth
       client-secret: dlLOHQRLCCk7mxpYKlwUVWhUQlGEoUz0
