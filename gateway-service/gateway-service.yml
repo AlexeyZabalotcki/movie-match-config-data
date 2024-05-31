@@ -78,3 +78,6 @@ spring:
 service-lb-urls:
   users: lb://user-profile-service
 
+logging:
+  level:
+    org.springframework.security: TRACE
