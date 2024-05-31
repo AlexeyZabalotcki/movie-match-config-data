@@ -74,6 +74,12 @@ spring:
             - Path=/groups/**
           filters:
             - RewritePath=/groups(?<remaining>.*), /api/v1/groups${remaining}
+        - id: roles
+          uri: ${service-lb-urls.users}
+          predicates:
+            - Path=/roles/**
+          filters:
+            - RewritePath=/roles(?<remaining>.*), /api/v1/roles{remaining}
 
 service-lb-urls:
   users: lb://user-profile-service
