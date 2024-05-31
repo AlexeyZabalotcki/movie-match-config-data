@@ -79,7 +79,7 @@ spring:
           predicates:
             - Path=/roles/**
           filters:
-            - RewritePath=/roles(?<remaining>.*), /api/v1/roles{remaining}
+            - RewritePath=/roles(?<remaining>.*), /api/v1/roles${remaining}
 
 service-lb-urls:
   users: lb://user-profile-service
