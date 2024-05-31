@@ -20,19 +20,21 @@ security:
           authorization-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/auth
           user-name-attribute: preferred_username
           user-info-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/userinfo
-          jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
+#          jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
+          issuer-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}
           user-info-authentication-method: header
       registration:
         movie-matcher:
           provider: keycloak
           client-id: movie-matcher
-          client-secret: dlLOHQRLCCk7mxpYKlwUVWhUQlGEoUz0
+          client-secret: M4jwMRvrGpFTBQUmMvVU0v16JwZsP7P8
           authorization-grant-type: authorization_code
           redirect-uri: http://localhost:8080/login/oauth2/code/keycloak
           scope: openid
     resourceserver:
       jwt:
-        jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
+        issuer-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}
+#        jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
 
 
 

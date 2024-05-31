@@ -57,4 +57,4 @@ app:
       adminClientSecret: M4jwMRvrGpFTBQUmMvVU0v16JwZsP7P8
       server-url: http://keycloak:8080
       client: movie-matcher-auth
-      client-secret: dlLOHQRLCCk7mxpYKlwUVWhUQlGEoUz0
+      client-secret: M4jwMRvrGpFTBQUmMvVU0v16JwZsP7P8
