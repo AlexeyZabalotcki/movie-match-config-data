@@ -81,7 +81,7 @@ spring:
           filters:
             - RewritePath=/roles(?<remaining>.*), /api/v1/roles${remaining}
         - id: movies
-          uri: ${service-lb-urls.users}
+          uri: ${service-lb-urls.movies}
           predicates:
             - Path=/movies/**
           filters:
@@ -89,6 +89,7 @@ spring:
 
 service-lb-urls:
   users: lb://user-profile-service
+  movies: lb://movie-service
 
 logging:
   level:
