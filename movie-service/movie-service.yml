@@ -7,7 +7,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: movies
     password: password
-    url: jdbc:postgresql://users-database:5433/movies
+    url: jdbc:postgresql://movies-database:5433/movies
   jpa:
     hibernate:
       ddl-auto: none
