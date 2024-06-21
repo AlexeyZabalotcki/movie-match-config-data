@@ -31,4 +31,4 @@ movie:
   base-url: "https://api.kinopoisk.dev/v1.4"
   key: "TRFMN39-T454NSZ-MA4FV0D-30F9F30"
   url: "/movie?"
-  limit: 250
+  limit: 200
