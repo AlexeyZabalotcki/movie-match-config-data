@@ -1,0 +1,26 @@
+server:
+  port: 0
+spring:
+  application:
+    name: movie-service
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: swipes
+      port: 27017
+      host: swipes-database
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
+
+movie:
+  base-url: "https://api.kinopoisk.dev/v1.4"
+  key: "TRFMN39-T454NSZ-MA4FV0D-30F9F30"
+  url: "/movie?"
+  limit: 250
