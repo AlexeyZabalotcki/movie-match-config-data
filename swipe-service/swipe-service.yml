@@ -2,7 +2,7 @@ server:
   port: 0
 spring:
   application:
-    name: movie-service
+    name: swipe-service
   data:
     mongodb:
       authentication-database: admin
