@@ -86,10 +86,17 @@ spring:
             - Path=/movies/**
           filters:
             - RewritePath=/movies(?<remaining>.*), /api/v1/movies${remaining}
+        - id: swipes
+          uri: ${service-lb-urls.swipes}
+          predicates:
+            - Path=/swipes/**
+          filters:
+            - RewritePath=/swipes(?<remaining>.*), /api/v1/swipes${remaining}
 
 service-lb-urls:
   users: lb://user-profile-service
   movies: lb://movie-service
+  swipes: lb://swipe-service
 
 logging:
   level:
