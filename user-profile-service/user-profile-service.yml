@@ -22,9 +22,9 @@ spring:
   mail:
     host: "smtp.gmail.com"
     port: 587
-    username: "currency.converter.application@gmail.com"
+    username: "moviematcher6@gmail.com"
 #    password: "{cipher}AQC8x7RLChhu6m34MUS8am+y2/2JnmFfgl2bPK9Me1IQQMu+oXpDUGYFUrbSlNP+5uY0/BLaLhe7yBrDpnCYKbWfO393+GoPfYzJZg7DQAtH7sX36fF31aJslD9vemjvJuEfLSpsxXa11v2pudS/BhXA6v8eYByzZXxT1Ycf2cmTBW6mOoCq4oLANSBcRiWwAsaULhgT/W1O679yH6ApdFCqkwCUT0eQ5WDr08VirUvkehT13qZlYLLIewNiU5Yq4nBJKQbGXnp76kjdofFE0AG2EboDPfOziRGUfLUKW3xQaEoB1qLTEA1mXZOesYU3gyG6gFGJ2iSlcPXan/EO9j5RcyPpcPg4MGR/sir2bQMo/J4hqIitz3h4hy4zYCIXr3UBmiXhMMZHHEm1YjDe9srj"
-    password: "pfflgjzzkihpksck"
+    password: "jbhozjddehqwkmka"
     default-encoding: UTF-8
     properties:
       mail:
